@@ -7,6 +7,7 @@
   <meta name="description" content="Учебный магазин «Зачётка»: канцтовары, аксессуары и техника для учёбы. Адаптивная вёрстка, КР №3.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/data.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -92,6 +93,11 @@
     <!-- Популярные товары: сетка карточек 1 → 2 → 3 → 4 колонки -->
     <section class="section">
       <div class="section__head">
+        <section class="section js-check" aria-labelledby="js-check-title">
+         <h2 id="js-check-title">Проверка JavaScript</h2>
+         <p class="js-message">JavaScript пока не выполнился.</p>
+         <pre class="product-output"></pre>
+        </section>
         <h2 class="section__title">Популярные товары</h2>
         <p class="section__subtitle">Самые частые покупки перед началом семестра.</p>
       </div>
