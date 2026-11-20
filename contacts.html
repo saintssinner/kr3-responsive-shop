@@ -3,70 +3,123 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Контактная информация учебного интернет-магазина.">
-  <title>Контакты — Учебный интернет-магазин</title>
+  <title>Контакты — Зачётка</title>
+  <meta name="description" content="Контакты учебного магазина «Зачётка»: адрес, телефон, e-mail и форма обратной связи.">
   <link rel="stylesheet" href="css/style.css">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
-  <meta property="og:image" content="https://saintssinner.github.io/kr1-html-css-shop/images/preview.jpg">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
 
-      <nav class="site-nav" aria-label="Основная навигация">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">🎓 Зачётка</a>
+      <button class="burger" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html">Главная</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="catalog.html">Каталог</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="contacts.html">Контакты</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
-          </li>
+          <li><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li><a class="site-nav__link" href="product.html">Товар</a></li>
+          <li><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li><a class="site-nav__link" href="contacts.html" aria-current="page">Контакты</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a class="breadcrumbs__link" href="index.html">Главная</a>
-      <span class="breadcrumbs__current">Контакты</span>
-    </nav>
-
+  <main id="main">
     <section class="section">
-      <h1>Контакты</h1>
-      <p>
-        Здесь размещается контактная информация учебного интернет-магазина.
-      </p>
+      <nav aria-label="Хлебные крошки">
+        <ol class="breadcrumbs">
+          <li><a href="index.html">Главная</a></li>
+          <li aria-current="page">Контакты</li>
+        </ol>
+      </nav>
+      <h1 class="page-title">Контакты</h1>
+      <p>Будем рады помочь с выбором товаров и доставкой заказа.</p>
 
-      <ul>
-        <li>Телефон: +7 (900) 000-00-00</li>
-        <li>E-mail: info@example.com</li>
-        <li>Адрес: г. Москва, учебный проект</li>
-      </ul>
+      <div class="contacts-grid">
+        <div class="contact-card">
+          <h2>Наши контакты</h2>
+          <ul class="contact-list">
+            <li><strong>Адрес:</strong> г. Москва, ул. Студенческая, 12, офис 204</li>
+            <li><strong>Телефон:</strong> <a href="tel:+78000000000">8 (800) 000-00-00</a> (бесплатно по РФ)</li>
+            <li><strong>E-mail:</strong> <a href="mailto:info@zachetka.example">info@zachetka.example</a></li>
+            <li><strong>Часы работы:</strong> ежедневно с 9:00 до 21:00</li>
+          </ul>
+          <img src="images/contacts.jpg" alt="Рабочее место с канцтоварами и тетрадями" width="960" height="640" loading="lazy">
+        </div>
+
+        <div class="contact-card">
+          <h2>Напишите нам</h2>
+          <form class="order-form js-form" action="#" method="post">
+            <div class="order-form__group">
+              <label class="order-form__label" for="ct-name">Имя *</label>
+              <input class="order-form__input" id="ct-name" name="name" type="text" required autocomplete="name">
+            </div>
+            <div class="order-form__group">
+              <label class="order-form__label" for="ct-email">E-mail *</label>
+              <input class="order-form__input" id="ct-email" name="email" type="email" required autocomplete="email">
+            </div>
+            <div class="order-form__group order-form__group--wide">
+              <label class="order-form__label" for="ct-message">Сообщение *</label>
+              <textarea class="order-form__textarea" id="ct-message" name="message" rows="5" required></textarea>
+            </div>
+            <p class="form-success" role="status">Сообщение отправлено! Ответим в течение дня.</p>
+            <div class="order-form__actions order-form__group--wide">
+              <button class="btn btn--primary" type="submit">Отправить сообщение</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </section>
 
-    <section class="section" id="feedback">
-      <h2>Обратная связь</h2>
-      <p>
-        Для отправки заявки используйте форму в модальном окне на главной странице.
+    <section class="section">
+      <div class="section__head">
+        <h2 class="section__title">О магазине</h2>
+      </div>
+      <img class="about-image" src="images/about.jpg" alt="Канцтовары, разложенные на белом столе" width="960" height="640" loading="lazy">
+      <p style="margin-top:16px;max-width:70ch;">
+        «Зачётка» — учебный магазин при кафедре индустриального программирования.
+        Мы собираем проверенные товары для учёбы: от тетрадей и ручек до техники и ламп.
+        Проект используется как учебный материал для контрольных работ по веб-разработке.
       </p>
-      <a class="button button--primary" href="index.html#contacts">Перейти к форме</a>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>🎓 Зачётка</h3>
+        <p>Учебный магазин: канцтовары, аксессуары и техника для учёбы.</p>
+      </div>
+      <div>
+        <h3>Навигация</h3>
+        <ul class="footer-nav">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="product.html">Товар</a></li>
+          <li><a href="order.html">Заявка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Контакты</h3>
+        <ul class="footer-nav">
+          <li><a href="mailto:info@zachetka.example">info@zachetka.example</a></li>
+          <li><a href="tel:+78000000000">8 (800) 000-00-00</a></li>
+          <li>г. Москва, ул. Студенческая, 12</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">© <span id="year">2026</span> «Зачётка». Контрольная работа №3 — адаптивная вёрстка.</div>
+    </div>
   </footer>
+
+  <button class="back-to-top" type="button" aria-label="Наверх">↑</button>
 </body>
 </html>

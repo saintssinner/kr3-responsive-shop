@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оставить заявку — Зачётка</title>
+  <meta name="description" content="Форма заявки учебного магазина «Зачётка»: адаптивная форма в одну колонку на мобильном и в две на desktop.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">🎓 Зачётка</a>
+      <button class="burger" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li><a class="site-nav__link" href="product.html">Товар</a></li>
+          <li><a class="site-nav__link" href="order.html" aria-current="page">Заявка</a></li>
+          <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <nav aria-label="Хлебные крошки">
+        <ol class="breadcrumbs">
+          <li><a href="index.html">Главная</a></li>
+          <li aria-current="page">Заявка</li>
+        </ol>
+      </nav>
+      <h1 class="page-title">Оставить заявку</h1>
+      <p>Заполните форму — мы свяжемся с вами в течение рабочего дня и подтвердим заказ.</p>
+
+      <!-- Адаптивная форма: 1 колонка на мобильном, 2 колонки при min-width: 768px -->
+      <form class="order-form js-form" action="#" method="post">
+        <div class="order-form__group">
+          <label class="order-form__label" for="order-name">Имя *</label>
+          <input class="order-form__input" id="order-name" name="name" type="text" required autocomplete="name" placeholder="Иван Петров">
+        </div>
+
+        <div class="order-form__group">
+          <label class="order-form__label" for="order-email">E-mail *</label>
+          <input class="order-form__input" id="order-email" name="email" type="email" required autocomplete="email" placeholder="ivan@example.ru">
+        </div>
+
+        <div class="order-form__group">
+          <label class="order-form__label" for="order-phone">Телефон</label>
+          <input class="order-form__input" id="order-phone" name="phone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__">
+        </div>
+
+        <div class="order-form__group">
+          <label class="order-form__label" for="order-product">Интересующий товар</label>
+          <select class="order-form__select" id="order-product" name="product">
+            <option value="backpack">Рюкзак «Студент»</option>
+            <option value="notebooks">Набор тетрадей «Курс»</option>
+            <option value="headphones">Наушники «Фокус»</option>
+            <option value="pens">Набор ручек и маркеров</option>
+            <option value="thermos">Термос «Горячий»</option>
+            <option value="lamp">Лампа «Светлячок»</option>
+            <option value="other">Другое</option>
+          </select>
+        </div>
+
+        <div class="order-form__group">
+          <label class="order-form__label" for="order-quantity">Количество</label>
+          <input class="order-form__input" id="order-quantity" name="quantity" type="number" min="1" max="100" value="1">
+        </div>
+
+        <div class="order-form__group">
+          <label class="order-form__label" for="order-city">Город доставки</label>
+          <input class="order-form__input" id="order-city" name="city" type="text" autocomplete="address-level2" placeholder="Москва">
+        </div>
+
+        <div class="order-form__group order-form__group--wide">
+          <label class="order-form__label" for="order-address">Адрес доставки</label>
+          <input class="order-form__input" id="order-address" name="address" type="text" autocomplete="street-address" placeholder="Улица, дом, квартира, пункт выдачи">
+        </div>
+
+        <div class="order-form__group order-form__group--wide">
+          <label class="order-form__label" for="order-comment">Комментарий к заказу</label>
+          <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4" placeholder="Например: нужна доставка до 18:00"></textarea>
+        </div>
+
+        <div class="order-form__group order-form__group--wide">
+          <label class="checkbox-row">
+            <input type="checkbox" name="agree" required>
+            <span>Соглашаюсь с обработкой персональных данных *</span>
+          </label>
+        </div>
+
+        <p class="form-success order-form__group--wide" role="status">Заявка отправлена! Мы свяжемся с вами в течение рабочего дня.</p>
+
+        <div class="order-form__actions order-form__group--wide">
+          <button class="btn btn--primary" type="submit">Отправить заявку</button>
+          <p class="form-note">Поля со * обязательны для заполнения.</p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>🎓 Зачётка</h3>
+        <p>Учебный магазин: канцтовары, аксессуары и техника для учёбы.</p>
+      </div>
+      <div>
+        <h3>Навигация</h3>
+        <ul class="footer-nav">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="product.html">Товар</a></li>
+          <li><a href="order.html">Заявка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Контакты</h3>
+        <ul class="footer-nav">
+          <li><a href="mailto:info@zachetka.example">info@zachetka.example</a></li>
+          <li><a href="tel:+78000000000">8 (800) 000-00-00</a></li>
+          <li>г. Москва, ул. Студенческая, 12</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">© <span id="year">2026</span> «Зачётка». Контрольная работа №3 — адаптивная вёрстка.</div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Наверх">↑</button>
+</body>
+</html>

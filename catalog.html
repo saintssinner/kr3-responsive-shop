@@ -3,104 +3,308 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Каталог товаров учебного интернет-магазина.">
-  <title>Каталог товаров — Учебный интернет-магазин</title>
+  <title>Каталог — Зачётка</title>
+  <meta name="description" content="Каталог учебных товаров магазина «Зачётка»: фильтры, сортировка, адаптивная сетка карточек.">
   <link rel="stylesheet" href="css/style.css">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
-  <meta property="og:image" content="https://saintssinner.github.io/kr1-html-css-shop/images/preview.jpg">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
 
-      <nav class="site-nav" aria-label="Основная навигация">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">🎓 Зачётка</a>
+      <button class="burger" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html">Главная</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html">Контакты</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
-          </li>
+          <li><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li><a class="site-nav__link" href="catalog.html" aria-current="page">Каталог</a></li>
+          <li><a class="site-nav__link" href="product.html">Товар</a></li>
+          <li><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a class="breadcrumbs__link" href="index.html">Главная</a>
-      <span class="breadcrumbs__current">Каталог</span>
-    </nav>
-
+  <main id="main">
     <section class="section">
-      <h1>Каталог товаров</h1>
-      <p>
-        На этой странице представлен учебный каталог товаров.
-        В дальнейшем здесь будут добавлены фильтры, сортировка и более
-        подробные карточки.
-      </p>
-    </section>
+      <nav aria-label="Хлебные крошки">
+        <ol class="breadcrumbs">
+          <li><a href="index.html">Главная</a></li>
+          <li aria-current="page">Каталог</li>
+        </ol>
+      </nav>
+      <h1 class="page-title">Каталог товаров</h1>
+      <p>Все товары для учёбы: от ручек до техники. Используйте фильтры слева (на мобильном — сверху).</p>
 
-    <section class="catalog-layout">
-      <aside class="catalog-filters">
-        <h2>Фильтры</h2>
-        <form class="filters-form" action="#" method="get">
-          <fieldset>
-            <legend>Категория</legend>
-            <label><input type="checkbox" name="category" value="all"> Все товары</label>
-            <label><input type="checkbox" name="category" value="popular"> Популярные</label>
-            <label><input type="checkbox" name="category" value="new"> Новинки</label>
-          </fieldset>
-          <fieldset>
-            <legend>Цена</legend>
-            <label for="price-from">От</label>
-            <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
-            <label for="price-to">До</label>
-            <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
-          </fieldset>
-          <button class="button button--primary" type="submit">Применить</button>
-        </form>
-      </aside>
+      <div class="catalog-layout">
+        <aside class="catalog-filters" aria-label="Фильтры каталога">
+          <form>
+            <h2>Фильтры</h2>
 
-      <section class="catalog-products">
-        <h2>Список товаров</h2>
-        <div class="products-grid">
-          <article class="product-card">
-            <h3 class="product-card__title">Товар 1</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 1000 руб.</p>
-            <a class="button button--primary" href="index.html#popular">Подробнее</a>
-          </article>
-          <article class="product-card">
-            <h3 class="product-card__title">Товар 2</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 1500 руб.</p>
-            <a class="button button--primary" href="index.html#popular">Подробнее</a>
-          </article>
-          <article class="product-card">
-            <h3 class="product-card__title">Товар 3</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 2000 руб.</p>
-            <a class="button button--primary" href="index.html#popular">Подробнее</a>
-          </article>
-        </div>
-      </section>
+            <fieldset class="filter-group">
+              <legend>Категория</legend>
+              <label class="checkbox-row"><input type="checkbox" name="cat" value="stationery" checked> Канцтовары</label>
+              <label class="checkbox-row"><input type="checkbox" name="cat" value="bags" checked> Рюкзаки и сумки</label>
+              <label class="checkbox-row"><input type="checkbox" name="cat" value="tech"> Техника</label>
+              <label class="checkbox-row"><input type="checkbox" name="cat" value="light"> Освещение</label>
+            </fieldset>
+
+            <fieldset class="filter-group">
+              <legend>Цена, ₽</legend>
+              <label class="checkbox-row">
+                <input type="range" name="price" min="0" max="5000" step="100" value="5000" aria-label="Максимальная цена">
+              </label>
+              <span>до 5 000 ₽</span>
+            </fieldset>
+
+            <fieldset class="filter-group">
+              <legend>Наличие</legend>
+              <label class="checkbox-row"><input type="radio" name="stock" value="in" checked> В наличии</label>
+              <label class="checkbox-row"><input type="radio" name="stock" value="order"> Под заказ</label>
+            </fieldset>
+
+            <div class="catalog-filters__actions">
+              <button class="btn btn--primary btn--small" type="submit">Применить</button>
+              <button class="btn btn--ghost btn--small" type="reset">Сбросить</button>
+            </div>
+          </form>
+        </aside>
+
+        <section class="catalog-products" aria-label="Список товаров">
+          <div class="catalog-toolbar">
+            <p class="catalog-toolbar__count">Найдено: 6 товаров</p>
+            <label class="sort">
+              Сортировка:
+              <select class="order-form__select" name="sort" style="width:auto;min-height:38px;">
+                <option value="popular">По популярности</option>
+                <option value="cheap">Сначала дешёвые</option>
+                <option value="expensive">Сначала дорогие</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="products-grid">
+            <!-- Карточка 1 -->
+            <article class="product-card">
+              <img
+                src="images/product-1-640.jpg"
+                srcset="images/product-1-480.jpg 480w,
+                        images/product-1-640.jpg 640w,
+                        images/product-1-960.jpg 960w"
+                sizes="(max-width: 639px) 100vw,
+                       (max-width: 1023px) 50vw,
+                       33vw"
+                alt="Рюкзак «Студент» бордового цвета"
+                width="640"
+                height="480"
+                loading="lazy"
+                class="product-card__image"
+              >
+              <div class="product-card__body">
+                <h3 class="product-card__title">Рюкзак «Студент»</h3>
+                <p class="product-card__description">Объём 20 л, отделение для ноутбука до 15,6".</p>
+                <div class="product-card__footer">
+                  <span class="price">2 490 ₽</span>
+                  <a class="btn btn--ghost btn--small" href="product.html">Подробнее</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Карточка 2 -->
+            <article class="product-card">
+              <img
+                src="images/product-2-640.jpg"
+                srcset="images/product-2-480.jpg 480w,
+                        images/product-2-640.jpg 640w,
+                        images/product-2-960.jpg 960w"
+                sizes="(max-width: 639px) 100vw,
+                       (max-width: 1023px) 50vw,
+                       33vw"
+                alt="Набор цветных тетрадей на белом фоне"
+                width="640"
+                height="480"
+                loading="lazy"
+                class="product-card__image"
+              >
+              <div class="product-card__body">
+                <h3 class="product-card__title">Набор тетрадей «Курс»</h3>
+                <p class="product-card__description">5 тетрадей в клетку по 48 листов.</p>
+                <div class="product-card__footer">
+                  <span class="price">890 ₽</span>
+                  <a class="btn btn--ghost btn--small" href="product.html">Подробнее</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Карточка 3 -->
+            <article class="product-card">
+              <img
+                src="images/product-3-640.jpg"
+                srcset="images/product-3-480.jpg 480w,
+                        images/product-3-640.jpg 640w,
+                        images/product-3-960.jpg 960w"
+                sizes="(max-width: 639px) 100vw,
+                       (max-width: 1023px) 50vw,
+                       33vw"
+                alt="Белые наушники на жёлтом фоне"
+                width="640"
+                height="480"
+                loading="lazy"
+                class="product-card__image"
+              >
+              <div class="product-card__body">
+                <h3 class="product-card__title">Наушники «Фокус»</h3>
+                <p class="product-card__description">С шумоподавлением для занятий.</p>
+                <div class="product-card__footer">
+                  <span class="price">3 990 ₽</span>
+                  <a class="btn btn--ghost btn--small" href="product.html">Подробнее</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Карточка 4 -->
+            <article class="product-card">
+              <img
+                src="images/product-4-640.jpg"
+                srcset="images/product-4-480.jpg 480w,
+                        images/product-4-640.jpg 640w,
+                        images/product-4-960.jpg 960w"
+                sizes="(max-width: 639px) 100vw,
+                       (max-width: 1023px) 50vw,
+                       33vw"
+                alt="Набор цветных ручек и карандашей"
+                width="640"
+                height="480"
+                loading="lazy"
+                class="product-card__image"
+              >
+              <div class="product-card__body">
+                <h3 class="product-card__title">Набор ручек и маркеров</h3>
+                <p class="product-card__description">12 ручек и 6 маркеров.</p>
+                <div class="product-card__footer">
+                  <span class="price">450 ₽</span>
+                  <a class="btn btn--ghost btn--small" href="product.html">Подробнее</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Карточка 5 -->
+            <article class="product-card">
+              <img
+                src="images/product-5-640.jpg"
+                srcset="images/product-5-480.jpg 480w,
+                        images/product-5-640.jpg 640w,
+                        images/product-5-960.jpg 960w"
+                sizes="(max-width: 639px) 100vw,
+                       (max-width: 1023px) 50vw,
+                       33vw"
+                alt="Термос из нержавеющей стали"
+                width="640"
+                height="480"
+                loading="lazy"
+                class="product-card__image"
+              >
+              <div class="product-card__body">
+                <h3 class="product-card__title">Термос «Горячий»</h3>
+                <p class="product-card__description">0,5 л, держит тепло 12 часов.</p>
+                <div class="product-card__footer">
+                  <span class="price">1 290 ₽</span>
+                  <a class="btn btn--ghost btn--small" href="product.html">Подробнее</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Карточка 6 -->
+            <article class="product-card">
+              <img
+                src="images/product-6-640.jpg"
+                srcset="images/product-6-480.jpg 480w,
+                        images/product-6-640.jpg 640w,
+                        images/product-6-960.jpg 960w"
+                sizes="(max-width: 639px) 100vw,
+                       (max-width: 1023px) 50vw,
+                       33vw"
+                alt="Настольная геометричная LED-лампа"
+                width="640"
+                height="480"
+                loading="lazy"
+                class="product-card__image"
+              >
+              <div class="product-card__body">
+                <h3 class="product-card__title">Лампа «Светлячок»</h3>
+                <p class="product-card__description">LED-лампа с регулировкой яркости.</p>
+                <div class="product-card__footer">
+                  <span class="price">1 890 ₽</span>
+                  <a class="btn btn--ghost btn--small" href="product.html">Подробнее</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>🎓 Зачётка</h3>
+        <p>Учебный магазин: канцтовары, аксессуары и техника для учёбы.</p>
+      </div>
+      <div>
+        <h3>Навигация</h3>
+        <ul class="footer-nav">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="product.html">Товар</a></li>
+          <li><a href="order.html">Заявка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Контакты</h3>
+        <ul class="footer-nav">
+          <li><a href="mailto:info@zachetka.example">info@zachetka.example</a></li>
+          <li><a href="tel:+78000000000">8 (800) 000-00-00</a></li>
+          <li>г. Москва, ул. Студенческая, 12</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">© <span id="year">2026</span> «Зачётка». Контрольная работа №3 — адаптивная вёрстка.</div>
+    </div>
   </footer>
+
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <form class="order-form js-form" method="dialog">
+      <div class="order-form__group order-form__group--wide">
+        <h2 id="order-dialog-title">Оставить заявку</h2>
+      </div>
+      <div class="order-form__group">
+        <label class="order-form__label" for="dlg-name">Имя</label>
+        <input class="order-form__input" id="dlg-name" name="name" type="text" required autocomplete="name">
+      </div>
+      <div class="order-form__group">
+        <label class="order-form__label" for="dlg-email">E-mail</label>
+        <input class="order-form__input" id="dlg-email" name="email" type="email" required autocomplete="email">
+      </div>
+      <div class="order-form__group order-form__group--wide">
+        <label class="order-form__label" for="dlg-comment">Комментарий</label>
+        <textarea class="order-form__textarea" id="dlg-comment" name="comment" rows="3"></textarea>
+      </div>
+      <p class="form-success" role="status">Заявка отправлена! Мы свяжемся с вами.</p>
+      <div class="order-form__actions order-form__group--wide">
+        <button class="btn btn--primary" type="submit">Отправить</button>
+        <button class="btn btn--ghost" type="button" data-dialog-close>Закрыть</button>
+      </div>
+    </form>
+  </dialog>
+
+  <button class="back-to-top" type="button" aria-label="Наверх">↑</button>
 </body>
 </html>
